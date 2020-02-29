@@ -1,0 +1,17 @@
+{% extends "layout.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<div class="container">
+  <header>
+    <h1>Plant Monitor</h1>
+  </header>
+
+  <div id="HumidityChart" class="chart"></div>
+  <div id="TempChart" class="chart"></div>
+  <div id="LightChart" class="chart"></div>
+</div>
+
+<script>
+  window.chartData = {{ chart_data|safe }};
+</script>
+<script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+{% endblock %}
